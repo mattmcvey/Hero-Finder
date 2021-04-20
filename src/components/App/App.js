@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import { cleanData } from './utilities'
+import Nav from '../Nav/Nav'
 
 class App extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-
+        <Nav />
       </div>
     )
   };
