@@ -14,9 +14,10 @@ header {
 }
 
 .favorites-logo-container {
+  display: flex;
   width:250px;
 }
 
-.favorites {
-  margin-bottom: 400px
+.button-container {
+  margin-top: 40px
 }
