@@ -3,6 +3,7 @@ import './App.css';
 import { cleanData } from './utilities'
 import Nav from '../Nav/Nav'
 import HeroCardContainer from '../HeroCardContainer/HeroCardContainer'
+import RandomThree from '../RandomThree/RandomThree'
 
 class App extends Component {
   constructor() {
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
+        <RandomThree heroes={this.state.heroes} />
         <HeroCardContainer heroes={this.state.heroes} />
       </div>
     )

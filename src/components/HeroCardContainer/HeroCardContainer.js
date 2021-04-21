@@ -8,7 +8,7 @@ const HeroCardContainer = ({ heroes }) => {
 
     return (
       <HeroCard
-        images={hero.images.md}
+        images={hero.images.sm}
         name={hero.name}
         id={hero.id}
         key={hero.id}

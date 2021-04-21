@@ -6,8 +6,8 @@ const Nav = () => {
   return (
     <header>
       <div className='title-container'>
-        <h2>Hero Finder!</h2>
-        <p>Where villains find their forenemy</p>
+        <h2>HERO FINDER</h2>
+        <p>WHERE VILLAINS FIND THEIR FOREVER ENEMY</p>
       </div>
       <div className='favorites-logo-container'>
         <div className='button-container'>
