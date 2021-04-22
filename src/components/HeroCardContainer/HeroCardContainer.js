@@ -5,7 +5,7 @@ import './HeroCardContainer.css'
 const HeroCardContainer = ({ heroes }) => {
 
   const heroCard = heroes.map(hero => {
-
+    
     return (
       <HeroCard
         images={hero.images.sm}
