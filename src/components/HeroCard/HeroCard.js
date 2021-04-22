@@ -1,13 +1,16 @@
 import React from 'react'
 import './HeroCard.css'
+import { Link } from 'react-router-dom'
 
-const HeroCard = ({ name, images }) => {
+const HeroCard = ({ name, images, id }) => {
 
   return (
-    <section className='hero-card'>
-      <img className='hero-image' src={images}></img>
-      <h4 className='hero-name'>{name}</h4>
-    </section>
+    <Link to={`heroes/${id}`} key={id} className='hero-card'>
+      <section className='hero-card'>
+        <img className='hero-image' src={images}></img>
+        <h4 className='hero-name'>{name}</h4>
+      </section>
+    </Link>
   )
 }
 
