@@ -6,23 +6,16 @@ const HeroInfo = ({ heroes, id }) => {
 
   const currentHero = heroes.find(hero => hero.id === parseInt(id))
 
-  if(heroes.length && currentHero.appearance.height[0] === '-'){
-    currentHero.appearance.height[0] = 'unknown'
-  }
-
-  if(heroes.length && currentHero.appearance.weight[0] === '- lb'){
-    currentHero.appearance.weight[0] = 'unknown'
-  }
-
   const overallPower = () => {
     const powers = Object.keys(currentHero.powerstats)
-    console.log(powers)
     let totalPower = 0
     powers.forEach(power => {
       totalPower += currentHero.powerstats[power]
     })
     return totalPower
   }
+
+  console.log(currentHero)
 
   return (
     <>
@@ -37,6 +30,7 @@ const HeroInfo = ({ heroes, id }) => {
                 <li><b>Full Name:</b> {currentHero.biography.fullName}</li>
                 <li><b>Height:</b> {currentHero.appearance.height[0]}</li>
                 <li><b>Weight:</b> {currentHero.appearance.weight[0]}</li>
+                <li><b>Super Teams:</b> {currentHero.connections.groupAffiliation}</li>
                 <li><b>Overall Power:</b> {overallPower()}</li>
               </ul>
             </div>
