@@ -1,19 +1,22 @@
 import React from 'react'
 import './Nav.css'
 import spiderman from './spiderman.svg'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   return (
     <header>
-      <div className='title-container'>
+      <Link to="/" className='title-container'>
         <h2>HERO FINDER</h2>
         <p>WHERE VILLAINS FIND THEIR FOREVER ENEMY</p>
-      </div>
+      </Link>
       <div className='favorites-logo-container'>
         <div className='button-container'>
           <button className='favorites'>Future Archenemies</button>
         </div>
-        <img className='logo' src={spiderman} alt='logo'></img>
+        <Link to="/">
+          <img className='logo' src={spiderman} alt='logo'></img>
+        </Link>
       </div>
     </header>
   )
