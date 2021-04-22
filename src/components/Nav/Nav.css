@@ -1,0 +1,23 @@
+header {
+  display: inline-flex;
+  justify-content: space-between;
+  color: #EC1D23;
+  background-color: black;
+  width: 100%;
+  height: 100px;
+}
+
+.logo {
+  margin-top: 10px;
+  height: 75%;
+  width: auto;
+}
+
+.favorites-logo-container {
+  display: flex;
+  width:250px;
+}
+
+.button-container {
+  margin-top: 40px
+}
