@@ -21,31 +21,36 @@ const HeroInfo = ({ heroes, id }) => {
     <>
       {!heroes.length && <h2>Loading...</h2>}
       {heroes.length &&
-        <div className='hero-info-container'>
+        <>
           <h1>{currentHero.name}</h1>
+          <div className='hero-info-container'>
             <img className='hero-image' src={currentHero.images.lg}></img>
-            <div className='general-info'>
-              <h3>General Info</h3>
-              <ul className='hero-info'>
-                <li><b>Full Name:</b> {currentHero.biography.fullName}</li>
-                <li><b>Height:</b> {currentHero.appearance.height[0]}</li>
-                <li><b>Weight:</b> {currentHero.appearance.weight[0]}</li>
-                <li><b>Super Teams:</b> {currentHero.connections.groupAffiliation}</li>
-                <li><b>Overall Power:</b> {overallPower()}</li>
-              </ul>
-            </div>
-            <div className='power-stats-container'>
-              <h3>Specific Power Set</h3>
-              <ul className='power-stats'>
-                <li><b>Intelligence:</b> {currentHero.powerstats.intelligence}</li>
-                <li><b>Strength:</b> {currentHero.powerstats.strength}</li>
-                <li><b>Speed:</b> {currentHero.powerstats.speed}</li>
-                <li><b>Durability:</b> {currentHero.powerstats.durability}</li>
-                <li><b>Power:</b> {currentHero.powerstats.power}</li>
-                <li><b>Combat:</b> {currentHero.powerstats.combat}</li>
-              </ul>
-            </div>
-        </div>
+            <section className='info'>
+              <div className='general-info'>
+                <h3>General Info</h3>
+                <ul className='hero-info'>
+                  <li><b>Full Name:</b> {currentHero.biography.fullName}</li>
+                  <li><b>Height:</b> {currentHero.appearance.height[0]}</li>
+                  <li><b>Weight:</b> {currentHero.appearance.weight[0]}</li>
+                  <li><b>Super Teams:</b> {currentHero.connections.groupAffiliation}</li>
+                  <li><b>Overall Power:</b> {overallPower()}</li>
+                </ul>
+              </div>
+              <div className='specific-stats'>
+                <h3>Specific Power Set</h3>
+                <ul className='power-stats'>
+                  <li><b>Intelligence:</b> {currentHero.powerstats.intelligence}</li>
+                  <li><b>Strength:</b> {currentHero.powerstats.strength}</li>
+                  <li><b>Speed:</b> {currentHero.powerstats.speed}</li>
+                  <li><b>Durability:</b> {currentHero.powerstats.durability}</li>
+                  <li><b>Power:</b> {currentHero.powerstats.power}</li>
+                  <li><b>Combat:</b> {currentHero.powerstats.combat}</li>
+                </ul>
+              </div>
+              <button className='add-archenemy'>Add Archenemy</button>
+            </section>
+          </div>
+        </>
       }
     </>
   )

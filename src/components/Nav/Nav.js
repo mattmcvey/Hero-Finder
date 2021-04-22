@@ -11,7 +11,7 @@ const Nav = () => {
       </div>
       <div className='favorites-logo-container'>
         <div className='button-container'>
-          <button className='favorites'>Favorite Caped Crusader</button>
+          <button className='favorites'>Future Archenemies</button>
         </div>
         <img className='logo' src={spiderman} alt='logo'></img>
       </div>
