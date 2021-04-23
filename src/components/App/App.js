@@ -30,7 +30,7 @@ class App extends Component {
             return(
               <>
                 <RandomThree heroes={this.state.heroes} />
-                <HeroCardContainer heroes={this.state.heroes} />
+                <HeroCardContainer heroes={this.state.heroes}/>
               </>
             )
           }
