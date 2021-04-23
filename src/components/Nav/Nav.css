@@ -18,11 +18,20 @@ a {
   width: auto;
 }
 
+.logo-link {
+  width: 290px
+}
+
 .favorites-logo-container {
   display: flex;
   width:250px;
 }
 
+.title-container {
+  margin-left: 10px;
+}
+
 .button-container {
-  margin-top: 40px
+  margin-top: 40px;
+  margin-right: 10px;
 }

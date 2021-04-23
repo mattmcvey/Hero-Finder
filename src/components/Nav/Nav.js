@@ -6,17 +6,15 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
   return (
     <header>
-      <Link to="/" className='title-container'>
+      <div className='title-container'>
         <h2>HERO FINDER</h2>
         <p>WHERE VILLAINS FIND THEIR FOREVER ENEMY</p>
+      </div>
+      <Link to='/' className='logo-link'>
+        <img className='logo' src={spiderman} alt='logo'></img>
       </Link>
-      <div className='favorites-logo-container'>
-        <div className='button-container'>
-          <button className='favorites'>Future Archenemies</button>
-        </div>
-        <Link to="/">
-          <img className='logo' src={spiderman} alt='logo'></img>
-        </Link>
+      <div className='button-container'>
+        <button className='favorites'>Future Archenemies</button>
       </div>
     </header>
   )

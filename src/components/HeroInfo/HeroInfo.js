@@ -24,7 +24,7 @@ const HeroInfo = ({ heroes, id }) => {
         <>
           <h1>{currentHero.name}</h1>
           <div className='hero-info-container'>
-            <img className='hero-image' src={currentHero.images.lg}></img>
+            <img className='hero-image-large' src={currentHero.images.lg}></img>
             <section className='info'>
               <div className='general-info'>
                 <h3>General Info</h3>
