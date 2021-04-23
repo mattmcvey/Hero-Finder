@@ -8,8 +8,14 @@ class HeroCardContainer extends Component {
     this.state = {
       search: '',
       filteredHeroes: [],
+      dropDownSelection: '',
+      filteredByPowerLevel: [],
       heroSearched: false
     }
+  }
+
+  filterHeroPowerLevel = event => {
+    console.log('here')
   }
 
   searchHeroes = event => {
@@ -24,20 +30,22 @@ class HeroCardContainer extends Component {
     this.setState({ search: event.target.value })
   }
 
+  handleChange = event => {
+    this.filterHeroPowerLevel(event)
+    this.setState( { dropDownSelection: event.target.value })
+  }
+
   assignHeroContainer = () => {
     let heroesToDisplay = []
     if(this.state.filteredHeroes.length && this.state.heroSearched) {
-      console.log('here')
       heroesToDisplay = this.state.filteredHeroes
     } else {
-      console.log('here')
       heroesToDisplay = this.props.heroes
     }
     return heroesToDisplay
   }
 
   builderHeroCards = () => {
-    console.log(this.assignHeroContainer())
     let currentHero = this.assignHeroContainer()
     if(!currentHero.length) {
       return (<h1>Loading...</h1>)
@@ -54,7 +62,6 @@ class HeroCardContainer extends Component {
       })
       return heroCard
     }
-
   }
 
   render() {
@@ -70,6 +77,13 @@ class HeroCardContainer extends Component {
             value={this.state.search}
             onChange={event => this.handleSearch(event)}
           />
+
+          <select value={this.state.dropDownSelection} onChange={event => this.handleChange(event)}>
+            <option>Choose a power level</option>
+            <option value='average'>Average</option>
+            <option vallue='powerful'>Powerful</option>
+            <option value='god-Like-Power'>God Like Power</option>
+          </select>
         </form>
         <section className='hero-card-container'>
           {this.builderHeroCards()}
