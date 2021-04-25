@@ -5,6 +5,7 @@ import Nav from '../Nav/Nav'
 import HeroCardContainer from '../HeroCardContainer/HeroCardContainer'
 import RandomThree from '../RandomThree/RandomThree'
 import HeroInfo from '../HeroInfo/HeroInfo'
+import FavoriteHeroes from '../FavoriteHeroes/FavoriteHeroes'
 import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
@@ -21,6 +22,19 @@ class App extends Component {
     .then(data => this.setState({ heroes: cleanData(data) }))
   }
 
+  addFavorite = (id) => {
+    if(localStorage.getItem('favoriteHeroes')) {
+      let storedHeroes = localStorage.getItem('favoriteHeroes')
+      let parsedHeroes = JSON.parse(storedHeroes)
+      const favoriteHero = this.state.heroes.find(hero => hero.id === parseInt(id))
+      parsedHeroes.push(favoriteHero)
+      localStorage.setItem(`favoriteHeroes`, JSON.stringify(parsedHeroes))
+    } else {
+      const favoriteHero = this.state.heroes.find(hero => hero.id === parseInt(id))
+      localStorage.setItem('favoriteHeroes', JSON.stringify([favoriteHero]))
+    }
+  }
+
   render(){
     return (
       <div className="App">
@@ -30,7 +44,7 @@ class App extends Component {
             return(
               <>
                 <RandomThree heroes={this.state.heroes} />
-                <HeroCardContainer heroes={this.state.heroes} />
+                <HeroCardContainer heroes={this.state.heroes}/>
               </>
             )
           }
@@ -39,7 +53,15 @@ class App extends Component {
             const { id } = match.params
             return(
               <>
-                <HeroInfo heroes={this.state.heroes} id={id}/>
+                <HeroInfo heroes={this.state.heroes} id={id} addFavorite={this.addFavorite}/>
+              </>
+            )
+          }
+          } />
+          <Route exact path='/favorites' render={() => {
+            return (
+              <>
+                <FavoriteHeroes />
               </>
             )
           }

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Nav.css'
 import spiderman from './spiderman.svg'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   return (
@@ -9,12 +10,12 @@ const Nav = () => {
         <h2>HERO FINDER</h2>
         <p>WHERE VILLAINS FIND THEIR FOREVER ENEMY</p>
       </div>
-      <div className='favorites-logo-container'>
-        <div className='button-container'>
-          <button className='favorites'>Favorite Caped Crusader</button>
-        </div>
+      <Link to='/' className='logo-link'>
         <img className='logo' src={spiderman} alt='logo'></img>
-      </div>
+      </Link>
+      <Link to='/favorites' className='button-container'>
+        <button className='favorites'>Future Archenemies</button>
+      </Link>
     </header>
   )
 }

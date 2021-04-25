@@ -1,0 +1,17 @@
+h1 {
+  text-align: center;
+}
+
+.hero-info-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.general-info, .specific-stats {
+  width: 478px;
+  background-color: grey;
+}
+
+h3 {
+  text-align: center;
+}

@@ -25,6 +25,7 @@ const RandomThree = ({ heroes }) => {
             name={heroOne.name}
             id={heroOne.id}
             key={heroOne.id}
+            favorited={false}
           />}
 
           {heroLength &&
@@ -33,6 +34,7 @@ const RandomThree = ({ heroes }) => {
             name={heroTwo.name}
             id={heroTwo.id}
             key={heroTwo.id}
+            favorited={false}
           />}
 
           {heroLength &&
@@ -41,6 +43,7 @@ const RandomThree = ({ heroes }) => {
             name={heroThree.name}
             id={heroThree.id}
             key={heroThree.id}
+            favorited={false}
           />}
         </div>
     </section>
