@@ -21,6 +21,20 @@ class App extends Component {
     .then(data => this.setState({ heroes: cleanData(data) }))
   }
 
+  addFavorite = (id) => {
+    if(localStorage.getItem('favoriteHeroes')) {
+      let localHeroes = localStorage.getItem('favoriteHeroes')
+      let parsedHeroes = JSON.parse(localHeroes)
+      console.log(parsedHeroes)
+      const favoriteHero = this.state.heroes.find(hero => hero.id === parseInt(id))
+      parsedHeroes.push(favoriteHero)
+      localStorage.setItem(`favoriteHeroes`, JSON.stringify(parsedHeroes))
+    } else {
+      const favoriteHero = this.state.heroes.find(hero => hero.id === parseInt(id))
+      localStorage.setItem('favoriteHeroes', JSON.stringify([favoriteHero]))
+    }
+  }
+
   render(){
     return (
       <div className="App">
@@ -39,7 +53,7 @@ class App extends Component {
             const { id } = match.params
             return(
               <>
-                <HeroInfo heroes={this.state.heroes} id={id}/>
+                <HeroInfo heroes={this.state.heroes} id={id} addFavorite={this.addFavorite}/>
               </>
             )
           }

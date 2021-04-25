@@ -1,6 +1,7 @@
 import React from 'react'
 import './HeroCard.css'
 import { Link } from 'react-router-dom'
+import { IoIosHeartEmpty } from 'react-icons'
 
 const HeroCard = ({ name, images, id }) => {
 

@@ -84,7 +84,9 @@ class HeroCardContainer extends Component {
     return (
       <>
         <h2 className='hero-header'>ALL HEREOS</h2>
-        <Search assignHeroContainer={this.assignHeroContainer} searchHeroes={this.searchHeroes} filterHeroPowerLevel={this.filterHeroPowerLevel}/>
+        <Search assignHeroContainer={this.assignHeroContainer}
+          searchHeroes={this.searchHeroes}
+          filterHeroPowerLevel={this.filterHeroPowerLevel}/>
         <section className='hero-card-container'>
           {this.builderHeroCards()}
         </section>
