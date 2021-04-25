@@ -1,6 +1,7 @@
 import React from 'react'
 import './RandomThree.css'
 import HeroCard from '../HeroCard/HeroCard'
+import PropTypes from 'prop-types'
 
 const RandomThree = ({ heroes }) => {
   const randomIndex = (heroes) => {
@@ -17,7 +18,7 @@ const RandomThree = ({ heroes }) => {
   return (
     <section>
       <h2 className='hero-header'>HEROES OF THE DAY</h2>
-        <carousel className='top-three'>
+        <div className='top-three'>
           {!heroLength && <h2>Loading...</h2>}
           {heroLength &&
           <HeroCard
@@ -45,9 +46,13 @@ const RandomThree = ({ heroes }) => {
             key={heroThree.id}
             favorited={false}
           />}
-        </carousel>
+        </div>
     </section>
   )
 }
 
 export default RandomThree
+
+RandomThree.propTypes = {
+  heroes: PropTypes.array
+}

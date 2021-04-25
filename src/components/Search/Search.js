@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Search.css'
+import PropTypes from 'prop-types'
 
 
 class Search extends Component {
@@ -47,3 +48,9 @@ class Search extends Component {
 }
 
 export default Search
+
+Search.propTypes = {
+  searchHeroes: PropTypes.func,
+  assignHeroContainer: PropTypes.func,
+  filterHeroPowerLevel: PropTypes.func
+}

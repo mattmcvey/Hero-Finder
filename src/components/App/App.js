@@ -27,7 +27,7 @@ class App extends Component {
     if(localStorage.getItem('favoriteHeroes')) {
       let storedHeroes = localStorage.getItem('favoriteHeroes')
       let parsedHeroes = JSON.parse(storedHeroes)
-      const favoriteHero = this.state.heroes.find(hero => hero.id === parseInt(id))
+      const favoriteHero = this.state.heroes.find(hero => hero.id === id)
       parsedHeroes.forEach(hero => {
         if(favoriteHero.id === hero.id) {
           objectExists = true
@@ -38,7 +38,7 @@ class App extends Component {
       }
       localStorage.setItem(`favoriteHeroes`, JSON.stringify(parsedHeroes))
     } else {
-      const favoriteHero = this.state.heroes.find(hero => hero.id == parseInt(id))
+      const favoriteHero = this.state.heroes.find(hero => hero.id === id)
       localStorage.setItem('favoriteHeroes', JSON.stringify([favoriteHero]))
     }
   }
@@ -61,7 +61,7 @@ class App extends Component {
             const { id } = match.params
             return(
               <>
-                <HeroInfo heroes={this.state.heroes} id={id} addFavorite={this.addFavorite}/>
+                <HeroInfo heroes={this.state.heroes} id={parseInt(id)} addFavorite={this.addFavorite}/>
               </>
             )
           }

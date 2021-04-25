@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import HeroCard from '../HeroCard/HeroCard'
 import './HeroCardContainer.css'
 import Search from '../Search/Search'
+import PropTypes from 'prop-types'
 
 class HeroCardContainer extends Component {
   constructor(props){
@@ -97,3 +98,7 @@ class HeroCardContainer extends Component {
 }
 
 export default HeroCardContainer
+
+HeroCardContainer.propTypes = {
+  heroes: PropTypes.array
+}
