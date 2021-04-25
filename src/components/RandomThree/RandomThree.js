@@ -17,7 +17,7 @@ const RandomThree = ({ heroes }) => {
   return (
     <section>
       <h2 className='hero-header'>HEROES OF THE DAY</h2>
-        <div className='top-three'>
+        <carousel className='top-three'>
           {!heroLength && <h2>Loading...</h2>}
           {heroLength &&
           <HeroCard
@@ -45,7 +45,7 @@ const RandomThree = ({ heroes }) => {
             key={heroThree.id}
             favorited={false}
           />}
-        </div>
+        </carousel>
     </section>
   )
 }
