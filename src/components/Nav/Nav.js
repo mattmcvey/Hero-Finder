@@ -13,9 +13,9 @@ const Nav = () => {
       <Link to='/' className='logo-link'>
         <img className='logo' src={spiderman} alt='logo'></img>
       </Link>
-      <div className='button-container'>
+      <Link to='/favorites' className='button-container'>
         <button className='favorites'>Future Archenemies</button>
-      </div>
+      </Link>
     </header>
   )
 }

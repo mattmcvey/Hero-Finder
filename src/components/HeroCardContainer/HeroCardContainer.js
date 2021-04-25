@@ -73,6 +73,7 @@ class HeroCardContainer extends Component {
           name={hero.name}
           id={hero.id}
           key={hero.id}
+          favorited={false}
           />
         )
       })
