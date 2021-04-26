@@ -23,7 +23,7 @@
 
 ### Screenshots / Screen Recordings
 #### Home Page and Searching:
-<img src='https://media.giphy.com/media/n2aUN4rVvYhrMKsWYC/giphy.gif'/>
+<img src='https://media.giphy.com/media/QBF3HiQ9L33EMI1ejC/giphy.gif'/>
 
 #### Hero Info and Favorites:
 <img src='https://media.giphy.com/media/Zov92zituMaogqaSsf/giphy.gif'/>
