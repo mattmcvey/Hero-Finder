@@ -15,6 +15,7 @@ const cleanData = (data) => {
     if(hero.connections.groupAffiliation === '-'){
       hero.connections.groupAffiliation = 'unknown'
     }
+    hero.favorited = false
   })
   return data.filter(hero => hero.biography.alignment === 'good')
 }

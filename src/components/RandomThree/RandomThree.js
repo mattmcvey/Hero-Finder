@@ -17,7 +17,7 @@ const RandomThree = ({ heroes }) => {
 
   return (
     <section>
-      <h2 className='hero-header'>HEROES OF THE DAY</h2>
+      <h2 className='hero-header'>FEATURED HEROES</h2>
         <div className='top-three'>
           {!heroLength && <h2>Loading...</h2>}
           {heroLength &&

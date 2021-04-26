@@ -3,19 +3,8 @@ import './HeroInfo.css'
 import PropTypes from 'prop-types'
 
 const HeroInfo = ({ heroes, id, addFavorite, removeFavorite }) => {
-  let currentHero = {}
-  const favoriteHeroes = JSON.parse(localStorage.getItem('favoriteHeroes'))
-  if(favoriteHeroes) {
-    favoriteHeroes.forEach(favoriteHero => {
-      if(favoriteHero.id === id) {
-        currentHero = favoriteHeroes.find(hero => hero.id === id)
-      } else {
-        currentHero = heroes.find(hero => hero.id === parseInt(id))
-      }
-    })
-  } else {
-    currentHero = heroes.find(hero => hero.id === parseInt(id))
-  }
+
+  const currentHero = heroes.find(hero => hero.id === parseInt(id))
 
   const overallPower = () => {
     const powers = Object.keys(currentHero.powerstats)

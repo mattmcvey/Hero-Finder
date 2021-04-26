@@ -36,7 +36,7 @@ class Search extends Component {
           onChange={event => this.handleSearch(event)}
         />
 
-        <select value={this.state.dropDownSelection} onChange={event => this.handleChange(event)}>
+        <select className='power-dd' value={this.state.dropDownSelection} onChange={event => this.handleChange(event)}>
           <option>Choose a power level</option>
           <option value='average'>Average</option>
           <option vallue='powerful'>Powerful</option>
