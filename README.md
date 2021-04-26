@@ -28,11 +28,6 @@
 #### Hero Info and Favorites:
 <img src='https://media.giphy.com/media/Zov92zituMaogqaSsf/giphy.gif'/>
 
-#### Hero Info:
-<>
-
-#### Favorited Page:
-<>
 
 ### Technologies Used:
 * Javacript
