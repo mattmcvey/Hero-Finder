@@ -1,6 +1,7 @@
 import React from 'react'
 import './RandomThree.css'
 import HeroCard from '../HeroCard/HeroCard'
+import PropTypes from 'prop-types'
 
 const RandomThree = ({ heroes }) => {
   const randomIndex = (heroes) => {
@@ -51,3 +52,7 @@ const RandomThree = ({ heroes }) => {
 }
 
 export default RandomThree
+
+RandomThree.propTypes = {
+  heroes: PropTypes.array
+}

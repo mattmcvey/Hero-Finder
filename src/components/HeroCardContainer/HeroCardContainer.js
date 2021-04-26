@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import HeroCard from '../HeroCard/HeroCard'
 import './HeroCardContainer.css'
 import Search from '../Search/Search'
+import PropTypes from 'prop-types'
 
 class HeroCardContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
       search: '',
-      filteredHeroes: []
+      filteredHeroes: [],
+      heroSearched: false
     }
   }
 
@@ -26,35 +28,37 @@ class HeroCardContainer extends Component {
       this.setState({filteredHeroes: this.props.heroes.filter(hero => {
         let heroTotalPower = this.overallPower(hero)
         return heroTotalPower <= 200
-        })
+        }), heroSearched: true
       })
     } else if (event.target.value === 'Powerful') {
       this.setState({filteredHeroes: this.props.heroes.filter(hero => {
         let heroTotalPower = this.overallPower(hero)
-        return heroTotalPower >= 201 && heroTotalPower < 401
-        })
+        return heroTotalPower >= 201 && heroTotalPower < 501
+        }), heroSearched: true
       })
     } else if (event.target.value === 'god-like-power') {
       this.setState({filteredHeroes: this.props.heroes.filter(hero => {
         let heroTotalPower = this.overallPower(hero)
-        return heroTotalPower >= 401
-        })
+        return heroTotalPower >= 501
+      }), heroSearched: true
       })
     } else {
-      this.setState({filteredHeroes: []})
+      this.setState({filteredHeroes: this.props.heroes})
     }
   }
 
   searchHeroes = event => {
     const value = event.target.value
     const searchHeroes = this.props.heroes.filter(hero => hero.name.toLowerCase().includes(value.toLowerCase()))
-    this.setState({ filteredHeroes: searchHeroes})
+    this.setState({ filteredHeroes: searchHeroes, heroSearched: true})
   }
 
   assignHeroContainer = () => {
     let heroesToDisplay = []
-    if(this.state.filteredHeroes.length) {
+    if(this.state.filteredHeroes.length && this.state.heroSearched) {
       heroesToDisplay = this.state.filteredHeroes
+    } else if(this.state.heroSearched && !this.state.filteredHeroes.length){
+      return <h1 className='search-error'>No hero goes by that name, try again!</h1>
     } else {
       heroesToDisplay = this.props.heroes
     }
@@ -62,11 +66,12 @@ class HeroCardContainer extends Component {
   }
 
   builderHeroCards = () => {
-    let currentHero = this.assignHeroContainer()
-    if(!currentHero.length) {
+    if(!this.assignHeroContainer().length && !this.state.heroSearched) {
       return (<h1>Loading...</h1>)
+    } else if(!this.assignHeroContainer().length && this.state.heroSearched){
+      return this.assignHeroContainer()
     } else {
-      let heroCard = currentHero.map(hero => {
+      let heroCard = this.assignHeroContainer().map(hero => {
         return (
           <HeroCard
           images={hero.images.sm}
@@ -97,3 +102,7 @@ class HeroCardContainer extends Component {
 }
 
 export default HeroCardContainer
+
+HeroCardContainer.propTypes = {
+  heroes: PropTypes.array
+}

@@ -14,7 +14,7 @@ const Nav = () => {
         <img className='logo' src={spiderman} alt='logo'></img>
       </Link>
       <Link to='/favorites' className='button-container'>
-        <button className='favorites'>Future Archenemies</button>
+        <button className='button'>Future Archenemies</button>
       </Link>
     </header>
   )
