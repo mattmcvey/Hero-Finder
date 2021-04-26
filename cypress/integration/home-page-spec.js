@@ -11,7 +11,7 @@ describe('Home page', () => {
   });
 
   it('should have a button in the nav for future archenemies', () => {
-    cy.get('header').contains('Future Archenemies')
+    cy.get('header').contains('Archenemies')
   });
 
   it('should have section with 3 hero cards at the top', () => {

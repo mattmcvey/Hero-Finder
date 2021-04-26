@@ -13,6 +13,8 @@ h1 {
 }
 
 .general-info, .specific-stats {
+  padding-top: 5px;
+  margin-top:20px;
   width: 478px;
   height: 200px;
   background-color: #E0E0E0;
@@ -28,4 +30,38 @@ h3 {
 .archenemy {
   margin-top: 20px;
   align-self: center;
+}
+
+@media only screen and (max-width: 1000px) {
+ .hero-info-container {
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .info{
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .hero-image-large {
+   width: 480px;
+ }
+}
+
+@media only screen and (max-width: 500px) {
+  .hero-image-large {
+    width: 300px;
+  }
+
+  .general-info, .specific-stats {
+    width: 300px
+  }
+
+  .info{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

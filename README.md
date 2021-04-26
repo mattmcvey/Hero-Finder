@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# HERO FINDER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contributors:
+* [Matt McVey](https://github.com/mattmcvey)
 
-## Available Scripts
+### Learning Goals:
+ * Further my understanding of React, Router, and Cypress
+ * Implement a controlled form
+#### Wins:
+ * Further solidified my understanding of React, Router and Cypress
+ * Was able to build this app from scratch with very little outside help
+#### Challenges:
+* Some the logic associated with the favoriting buttons were challenging due to their placement in hero info view
+* Design is challenging to me so getting an app that I was proud of visually tough for me at times
 
-In the project directory, you can run:
+## Overview of Site:
+##### Hero finder is a web app that allows villains to:
+  * View a random selection of heroes at the top of the landing page
+  * Browse all heroes or filter based on name or power level
+  * Click on a hero to view more specific information about that hero
+  * From the hero view they were able to favorite that hero which was then added to a favorite heroes page
+  * Remove a favorited hero
 
-### `npm start`
+### Screenshots / Screen Recordings
+#### Home Page:
+<img src='./src/homepage.gif'/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Searching:
+<img src='./src/searchpage.gif'/>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Hero Info:
+<>
 
-### `npm test`
+#### Favorited Page:
+<>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Technologies Used:
+* Javacript
+* CSS
+* Webpack
+* [React](https://reactjs.org/)
+* [React Router](https://reactrouter.com/)
+* [Cypress](https://www.cypress.io/)
 
-### `npm run build`
+## Setup
+* To access the site on your local machine:
+  * Clone down the repo through the command line
+  * Run `$npm install` to install dependencies
+  * Run `$npm start` to open the page on a local browser
+* Otherwise the site is deployed onto heroku and is accessible [here](https://my-hero-finder.herokuapp.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Running Tests
+* After completing the setup steps above:
+  * Run `$npx cypress open` to open up the test suite
+  * From there click on the `home-page-spec.js` and `hero-info-spec.js` file to open it in your browser and watch the tests run automatically

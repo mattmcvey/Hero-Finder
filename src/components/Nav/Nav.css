@@ -56,3 +56,13 @@ a {
   background-color: #EC1D23;
   color: black
 }
+
+@media only screen and (max-width: 800px) {
+  .hidden{
+    display: none
+  }
+
+  .logo-link {
+    width: 100px
+  }
+}
