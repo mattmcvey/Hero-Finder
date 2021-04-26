@@ -42,6 +42,12 @@ describe('Home page', () => {
 })
 
 describe('Home page errors', () => {
+  beforeEach(() => {
+    cy.fixture('heroes').then((testHeroes) => {
+      cy.intercept('https://akabab.github.io/superhero-api/api/all.json', testHeroes)
+    })
+    cy.visit('http://localhost:3000')
+  })
   it('should display an error mesage when a data request is broken with 400 error', () => {
     cy.intercept('GET', 'https://akabab.github.io/superhero-api/api/all.json', {
       statusCode: 404
@@ -56,5 +62,13 @@ describe('Home page errors', () => {
     })
     cy.visit('http://localhost:3000')
     cy.get('.error-message').contains('Something went wrong')
+  })
+
+  it('should show an error message when no hero matches search criteria', () => {
+    cy.get('.search-input').type('asdad').get('.hero-card-container').contains('No hero')
+  })
+
+  it('should show an error message when no hero matches power level', () => {
+    cy.get('.power-dd').select('god-like-power').get('.hero-card-container').contains('No hero')
   })
 })
