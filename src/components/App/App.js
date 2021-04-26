@@ -50,7 +50,11 @@ class App extends Component {
         storedHeroes.splice(i, 1)
       }
     })
-    localStorage.setItem('favoriteHeroes', JSON.stringify(storedHeroes))
+    if(!storedHeroes.length) {
+      localStorage.clear()
+    } else {
+      localStorage.setItem('favoriteHeroes', JSON.stringify(storedHeroes))
+    }
   }
 
   render(){

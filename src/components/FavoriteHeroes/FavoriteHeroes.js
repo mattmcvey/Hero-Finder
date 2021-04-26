@@ -22,7 +22,7 @@ const FavoriteHeroes = () => {
 
   return (
     <section className='hero-card-container'>
-      {!JSON.parse(localStorage.getItem('favoriteHeroes')).length && <h2>No archenemies added yet. Click spidey's head to go back home to find some!</h2>}
+      {!JSON.parse(localStorage.getItem('favoriteHeroes')) && <h2>No archenemies added yet. Click spidey's head to go back home to find some!</h2>}
       {favoriteHeroesToDisplay}
     </section>
   )
