@@ -43,7 +43,7 @@ class HeroCardContainer extends Component {
       }), heroSearched: true
       })
     } else {
-      this.setState({filteredHeroes: []})
+      this.setState({filteredHeroes: this.props.heroes})
     }
   }
 

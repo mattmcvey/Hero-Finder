@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import './App.css';
-import { cleanData } from './utilities'
+import { cleanData } from '../../../src/utilities'
+import { getHeroes } from '../../../src/apicall'
 import Nav from '../Nav/Nav'
 import HeroCardContainer from '../HeroCardContainer/HeroCardContainer'
 import RandomThree from '../RandomThree/RandomThree'
 import HeroInfo from '../HeroInfo/HeroInfo'
+import Error from '../Error/Error'
 import FavoriteHeroes from '../FavoriteHeroes/FavoriteHeroes'
 import { Route, Switch } from 'react-router-dom'
 
@@ -12,14 +14,15 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      heroes: []
+      heroes: [],
+      error: ''
     }
   }
 
   componentDidMount() {
-    fetch('https://akabab.github.io/superhero-api/api/all.json')
-    .then(response => response.json())
+    getHeroes()
     .then(data => this.setState({ heroes: cleanData(data) }))
+    .catch(error => this.setState({ error: error.message }))
   }
 
   addFavorite = (id) => {
@@ -61,6 +64,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
+        {this.state.error && <Error error={this.state.error} />}
         <Switch>
           <Route exact path='/' render={() => {
             return(
