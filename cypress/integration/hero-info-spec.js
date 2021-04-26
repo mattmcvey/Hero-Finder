@@ -26,7 +26,7 @@ describe('Hero Info', () => {
 
   it('should remove hero from favorites', () => {
     cy.get('.archenemy').click()
-    cy.visit('http://localhost:3000/favorites').get('.hero-card-container a').first().click().get('.archenemy').click()
+    cy.get('.button').first().click().get('.hero-card-container a').click().get('.archenemy').click()
     cy.visit('http://localhost:3000/favorites').get('.hero-card-container').contains('Agent Bob').should('not.exist')
   })
 
