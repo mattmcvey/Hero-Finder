@@ -66,8 +66,8 @@ const HeroInfo = ({ heroes, id, addFavorite, removeFavorite }) => {
                   <li><b>Combat:</b> {currentHero.powerstats.combat}</li>
                 </ul>
               </div>
-              {!currentHero.favorited && <button className='button' onClick={() => updateFavoriteHeroes()}>Add Archenemy</button>}
-              {currentHero.favorited && <button className='button' onClick={() => removeFavoritedHero()}>Remove Archenemy</button>}
+              {!currentHero.favorited && <button className='button archenemy' onClick={() => updateFavoriteHeroes()}>Add Archenemy</button>}
+              {currentHero.favorited && <button className='button archenemy' onClick={() => removeFavoritedHero()}>Remove Archenemy</button>}
             </section>
           </div>
         </>

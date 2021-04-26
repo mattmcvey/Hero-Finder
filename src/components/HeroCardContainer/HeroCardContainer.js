@@ -66,7 +66,6 @@ class HeroCardContainer extends Component {
   }
 
   builderHeroCards = () => {
-
     if(!this.assignHeroContainer().length && !this.state.heroSearched) {
       return (<h1>Loading...</h1>)
     } else if(!this.assignHeroContainer().length && this.state.heroSearched){
