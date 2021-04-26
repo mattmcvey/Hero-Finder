@@ -2,9 +2,16 @@ import React from 'react'
 import './HeroInfo.css'
 import PropTypes from 'prop-types'
 
-const HeroInfo = ({ heroes, id, addFavorite }) => {
-
-  const currentHero = heroes.find(hero => hero.id === parseInt(id))
+const HeroInfo = ({ heroes, id, addFavorite, removeFavorite }) => {
+  let currentHero = {}
+  const favoriteHeroes = JSON.parse(localStorage.getItem('favoriteHeroes'))
+  favoriteHeroes.forEach(favoriteHero => {
+    if(favoriteHero.id === id) {
+      currentHero = favoriteHeroes.find(hero => hero.id === id)
+    } else {
+      currentHero = heroes.find(hero => hero.id === parseInt(id))
+    }
+  })
 
   const overallPower = () => {
     const powers = Object.keys(currentHero.powerstats)
@@ -16,7 +23,13 @@ const HeroInfo = ({ heroes, id, addFavorite }) => {
   }
 
   const updateFavoriteHeroes = () => {
+    currentHero.favorited = true
     addFavorite(id)
+  }
+
+  const removeFavoritedHero = () => {
+    currentHero.favorited = false
+    removeFavorite(id)
   }
 
   return (
@@ -49,7 +62,8 @@ const HeroInfo = ({ heroes, id, addFavorite }) => {
                   <li><b>Combat:</b> {currentHero.powerstats.combat}</li>
                 </ul>
               </div>
-              <button className='add-archenemy' onClick={() => updateFavoriteHeroes()}>Add Archenemy</button>
+              {!currentHero.favorited && <button className='add-archenemy' onClick={() => updateFavoriteHeroes()}>Add Archenemy</button>}
+              {currentHero.favorited && <button className='add-archenemy' onClick={() => removeFavoritedHero()}>Remove Archenemy</button>}
             </section>
           </div>
         </>

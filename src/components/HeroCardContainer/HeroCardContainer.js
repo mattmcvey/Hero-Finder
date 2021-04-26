@@ -58,7 +58,7 @@ class HeroCardContainer extends Component {
     if(this.state.filteredHeroes.length && this.state.heroSearched) {
       heroesToDisplay = this.state.filteredHeroes
     } else if(this.state.heroSearched && !this.state.filteredHeroes.length){
-      return <h1 class='search-error'>No hero goes by that name, try again!</h1>
+      return <h1 className='search-error'>No hero goes by that name, try again!</h1>
     } else {
       heroesToDisplay = this.props.heroes
     }

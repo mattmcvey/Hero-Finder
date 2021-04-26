@@ -43,6 +43,16 @@ class App extends Component {
     }
   }
 
+  removeFavorite = (id) => {
+    const storedHeroes = JSON.parse(localStorage.getItem('favoriteHeroes'))
+    storedHeroes.forEach((hero, i) => {
+      if(hero.id === id) {
+        storedHeroes.splice(i, 1)
+      }
+    })
+    localStorage.setItem('favoriteHeroes', JSON.stringify(storedHeroes))
+  }
+
   render(){
     return (
       <div className="App">
@@ -61,7 +71,7 @@ class App extends Component {
             const { id } = match.params
             return(
               <>
-                <HeroInfo heroes={this.state.heroes} id={parseInt(id)} addFavorite={this.addFavorite}/>
+                <HeroInfo heroes={this.state.heroes} id={parseInt(id)} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite}/>
               </>
             )
           }
