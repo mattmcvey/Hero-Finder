@@ -22,11 +22,11 @@
   * Remove a favorited hero
 
 ### Screenshots / Screen Recordings
-#### Home Page:
-<img src='./src/homepage.gif'/>
+#### Home Page and Searching:
+<img src='https://media.giphy.com/media/n2aUN4rVvYhrMKsWYC/giphy.gif'/>
 
-#### Searching:
-<img src='./src/searchpage.gif'/>
+#### Hero Info and Favorites:
+<img src='https://media.giphy.com/media/Zov92zituMaogqaSsf/giphy.gif'/>
 
 #### Hero Info:
 <>
