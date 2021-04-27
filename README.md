@@ -38,6 +38,9 @@
 * [React Router](https://reactrouter.com/)
 * [Cypress](https://www.cypress.io/)
 
+### API Used
+* https://akabab.github.io/superhero-api/api/
+
 ## Setup
 * To access the site on your local machine:
   * Clone down the repo through the command line
